@@ -1,18 +1,29 @@
-import { defineConfig, globalIgnores } from "eslint/config";
-import nextVitals from "eslint-config-next/core-web-vitals";
-import nextTs from "eslint-config-next/typescript";
+import { antfu } from '@antfu/eslint-config'
 
-const eslintConfig = defineConfig([
-  ...nextVitals,
-  ...nextTs,
-  // Override default ignores of eslint-config-next.
-  globalIgnores([
-    // Default ignores of eslint-config-next:
-    ".next/**",
-    "out/**",
-    "build/**",
-    "next-env.d.ts",
-  ]),
-]);
+export default antfu({
+  ignores: ['.claude/**', 'skills-lock.json', '.next/**', 'out/**', 'next-env.d.ts', 'playwright-report/**', 'test-results/**', 'output/playwright/**'],
+  nextjs: true,
+  test: false,
+  rules: {
+    '@typescript-eslint/no-namespace': 'off',
+    'jsx-quotes': ['error', 'prefer-double'],
 
-export default eslintConfig;
+    'import/no-duplicates': 'error',
+    'import/prefer-default-export': 'off',
+
+    'no-irregular-whitespace': 'off',
+    'n/prefer-global/process': 'off',
+
+    'react-hooks/exhaustive-deps': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    'react-refresh/only-export-components': 'off',
+    'react/no-nested-components': 'off',
+
+    'react/no-context-provider': 'off',
+    'react/no-forward-ref': 'off',
+
+    'style/jsx-sort-props': 'error',
+    'on-console': 'off',
+    'react/no-array-index-key': 'off',
+  },
+})

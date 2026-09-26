@@ -12,6 +12,10 @@
 
 # testing
 /coverage
+/test-results/
+/playwright-report/
+/output/playwright/
+/.auth/
 
 # next.js
 /.next/
@@ -23,6 +27,8 @@
 # misc
 .DS_Store
 *.pem
+.idea
+.vscode
 
 # debug
 npm-debug.log*
@@ -35,6 +41,7 @@ yarn-error.log*
 
 # vercel
 .vercel
+.playwright-cli
 
 # typescript
 *.tsbuildinfo

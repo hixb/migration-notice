@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI 助手 · 迁移通知
 
-## Getting Started
+使用 Next.js 16、React 19、HeroUI v3 和 Tailwind CSS v4 构建的中文迁移通知页。
 
-First, run the development server:
+## 本地开发
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+打开 http://localhost:3000 查看页面。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 修改通知
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `app/site-config.ts`：项目名称和新站地址，目前为「AI 助手」和 `https://hellozxb.com`。
+- `app/page.tsx`：迁移文案和装饰插画。
+- `app/globals.css`：配色、布局、响应式样式和减少动态效果的适配。
+- `app/migration-actions.tsx`：访问新站、复制地址及操作反馈。
 
-## Learn More
+页面不会自动跳转。访问按钮直接打开新地址；复制地址需要 HTTPS 或 localhost，复制失败时会提示手动复制。
 
-To learn more about Next.js, take a look at the following resources:
+## 检查与构建
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+pnpm lint
+pnpm build
+pnpm start
+```
